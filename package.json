@@ -1,0 +1,17 @@
+{
+  "name": "hide-pin-button-for-twitch-addon",
+  "version": "1.0.1",
+  "description": "Firefox extension that hides the pin button in Twitch chat for moderators (English & German)",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "npm run build && web-ext run --source-dir . --start-url https://www.twitch.tv",
+    "package": "npm run build && web-ext build --source-dir . --overwrite-dest --ignore-files src tsconfig.json package*.json node_modules .idea"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^143.0.1",
+    "typescript": "^6.0.3",
+    "web-ext": "^8.0.0"
+  },
+  "private": true
+}

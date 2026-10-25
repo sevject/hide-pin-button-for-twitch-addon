@@ -1,0 +1,12 @@
+/* Hide the pin controls immediately, before the content script gets to them.
+   The popup toggle adds .twitch-hide-pin-disabled to <html> to show them again. */
+html:not(.twitch-hide-pin-disabled) :is(
+  button[aria-label^="Pin message" i],
+  button[aria-label^="Pin chat message" i],
+  button[aria-label^="Nachricht anheften" i],
+  button[aria-label^="Diese Nachricht anheften" i],
+  button[aria-label^="Pin this message" i],
+  [data-twitch-hide-pin]
+) {
+  display: none !important;
+}

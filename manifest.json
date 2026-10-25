@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Pin Button for Twitch",
+  "version": "1.0.0",
+  "description": "Hides the \"Pin message\" button in Twitch chat so moderators don't pin messages by accident.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Hide Pin Button for Twitch",
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "hide-pin-button-for-twitch@sevject",
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "120.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitch.tv/*",
+        "https://m.twitch.tv/*",
+        "https://dashboard.twitch.tv/*"
+      ],
+      "js": [
+        "dist/settings.js",
+        "dist/content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
