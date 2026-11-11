@@ -12,3 +12,5 @@ yarn-error.log*
 .vscode/*
 /dist
 /web-ext-artifacts
+
+package-lock.json

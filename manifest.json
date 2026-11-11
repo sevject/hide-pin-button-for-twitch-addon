@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Hide Pin Button for Twitch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hides the \"Pin message\" button in Twitch chat so moderators don't pin messages by accident.",
   "icons": {
     "48": "icons/icon.svg",
